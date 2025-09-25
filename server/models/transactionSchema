@@ -1,0 +1,17 @@
+const mongoose=require('mongoose');
+const transactionSchema= new mongoose.Schema({
+    amount: {
+        type: Number,
+        required: true
+    },
+    type: {
+        type: String,
+        required: true,
+    },
+    client: {
+        type: String,
+        required: false,
+    }
+},{timestamps: true});
+const Transactions = mongoose.model('transaction',transactionSchema);
+module.exports=Transactions;
